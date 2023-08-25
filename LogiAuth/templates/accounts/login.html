@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Register
+{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'LogiAuth/AuthForms.css' %}">
+{% endblock css %}
+{% block content %}
+    <div class="container">
+        <div class="form-box mt-5">
+            <form action="{% url 'login' %}" method="post">
+                <h3 class="mb-3">Login</h3>
+                <hr>
+                {% csrf_token %}
+                {% for field in form %}
+                    <label class="form-label" for="">{{ field.label }}</label>
+                    {{ field }}
+                {% endfor %}
+                <input class="btn btn-sm btn-success px-4 mt-3" type="submit" value="Login">
+                {% for message in messages %}
+                  <p class="errorlist mt-2">{{ message }}</p>
+                {% endfor %}
+                <div class="below-text mt-4 ">
+                    <p>
+                        Don't have an Account? <a class="text-decoration-none" href="{% url 'register' %}">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <h4 class="text-center mt-4">Logi<span class="hub"><b>Hub</b></span></h4>
+    </div>
+{% endblock content %}

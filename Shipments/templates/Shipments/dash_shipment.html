@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div hx-target="#middle-panel" hx-get="{% url 'dash_shipment' %}" class="row">
+        <div class="col-lg-6 text-bg-primary">one</div>
+        <div class="col-lg-6 text-bg-success">two</div>
+    </div>
+{% endblock content %}

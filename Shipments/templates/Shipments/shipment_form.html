@@ -1,0 +1,5 @@
+<form hx-post="{% url 'add_shipment' %}" method="post" hx-target="#middle-panel">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-success" type="submit" value="Add Shipment">
+</form>

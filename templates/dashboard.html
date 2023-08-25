@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}LogiHub - Dashboard{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    <div class="main-box-1">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="left">
+                    <div class="left-up text-center">
+                        <h4>Logi<span class="hub"><b>Hub</b></span></h4>
+                        <hr>
+                        <!-- <a href="{% url 'logout' %}">Logout</a> -->
+                    </div>
+                    <div class="left-down d-flex flex-column ">
+                        <ul>
+                            <li><a class="symbol d-flex flex-column align-items-center mt-5 mb-4" href="{% url 'dash_shipment' %}" hx-get="/shipment/dashboard/"hx-target="#middle-panel" hx-trigger="click"><span class="material-symbols-outlined">
+                                loyalty
+                            </span>Shipments</a></li>
+                            <li><a class="symbol d-flex flex-column align-items-center mb-4" href=""><span class="material-symbols-outlined">
+                                groups
+                                </span>Clients</a></li>
+                            <li><a class="symbol d-flex flex-column align-items-center mb-4" href=""><span class="material-symbols-outlined">
+                                touch_app
+                                </span>Booking</a></li>
+                            <li><a class="symbol d-flex flex-column align-items-center mb-4" href=""><span class="material-symbols-outlined">
+                                route
+                                </span>Routes</a></li>
+                            <li><a class="symbol d-flex flex-column align-items-center mb-5" href=""><span class="material-symbols-outlined">
+                                group
+                                </span>Users</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="symbol d-flex flex-row gap-1 justify-content-center align-items-center mt-5" href="{% url 'logout' %}">Logout<span class="material-symbols-outlined">
+                                logout
+                                </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="right">
+                    <header>
+                        <nav class="navbar navbar-expand-lg tertiary">
+                            <div class="container-fluid">
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                  </li>
+                                  
+                                </ul>
+                                <form class="d-flex" role="search">
+                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                  <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                              </div>
+                            </div>
+                          </nav>
+                    </header>
+                    <div id="middle-panel" hx-target="this">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
